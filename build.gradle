@@ -70,6 +70,50 @@ buildscript {
 allprojects {
   group = GROUP
   version = VERSION_NAME
+//  apply plugin: 'java'
+//  apply plugin: 'jacoco'
+//
+//  jacoco {
+//    toolVersion = "0.8.5"
+//    reportsDir = file("$buildDir/reports")
+//  }
+//
+//  jacocoTestReport {
+//    group = "Reporting"
+//    description = "Generate JCC Coverage Report"
+//    executionData.setFrom file("${buildDir}/jacoco/jacocoTest.exec")
+//
+//    def classDir = [
+//            "okio/build/classes/kotlin/jvm/test/okio",
+//            "okio/build/classes/java/test/okio"
+//    ]
+//
+//    def sourceDir = [
+//            "okio/src/commonTest/kotlin/okio",
+//            "okio/src/jvmTest/java/okio",
+//            "okio/src/jvmTest/kotlin/okio"
+//    ]
+//
+//    classDirectories.setFrom files(classDir)
+//    sourceDirectories.setFrom files(sourceDir)
+//
+//    reports {
+//      html.enabled true
+//      xml.enabled true
+//      csv.enabled false
+//    }
+//
+//  }
+//
+//  test {
+//    useJUnitPlatform()
+//    jacoco {
+//      destinationFile = file("${buildDir}/jacoco/jacocoTest.exec")
+//
+//    }
+//  }
+
+
 }
 
 subprojects {
