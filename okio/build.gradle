@@ -88,5 +88,37 @@ kotlin {
   }
 }
 
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+jacoco {
+  toolVersion = "0.8.5"
+  reportsDir = file("${buildDir}/okio/build/reports")
+}
+
+jacocoTestReport {
+  reports {
+    html.enabled true
+    xml.enabled true
+    csv.enabled false
+    html.destination file("${buildDir}/okio/build/jacocoCoverageHtml")
+    xml.destination file("${buildDir}/okio/build/jacocoXml.xml")
+  }
+
+  doFirst {
+    executionData.setFrom file  ("${buildDir}/jacoco/jacocoTest.exec")
+    classDirectories.setFrom files("${buildDir}/okio/build/classes/java/test/okio")
+
+  }
+}
+
+test {
+  jacoco {
+    destinationFile = file("${buildDir}/jacoco/jacocoTest.exec")
+    classDumpDir = file("${buildDir}/jacoco/classPathDump")
+  }
+}
+
+
 apply from: 'jvm/jvm.gradle'
 apply from: "$rootDir/gradle/gradle-mvn-mpp-push.gradle"

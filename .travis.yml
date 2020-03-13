@@ -9,6 +9,7 @@ before_install:
 
 script:
   - ./gradlew clean build
+  - ./gradlew jacocoTestReport
 
 after_success:
   - .buildscript/deploy_snapshot.sh
