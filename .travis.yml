@@ -22,8 +22,8 @@ env:
     - secure: "gFmZ18DktyZonExeAYGT4HtCodvAbRcH94AImWG6DrJZFzGkRSN//s1AjrgkAL/jZ4lLuoxyCs1nBoX2U83LmpJ8KxLIhU/45JlJgmD1tnE2zdFim6dHN+J6Yj7MCWqD5KO6E0dJickTJG2XzFu0oN3vBn7sETliQHzlw2lw8ME="
 
 branches:
-  except:
-    - gh-pages
+  only:
+    - testing_project_cs182
 
 notifications:
   email: false
